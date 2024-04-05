@@ -5,16 +5,16 @@ body {
 }
 
 .header {
+    display: flex;
+    align-items: center;
     background-color: #f1f1f1;
     padding: 20px;
-    text-align: center;
 }
 
-.header img {
+.header-image {
     width: 100px;
     height: auto;
-    margin-right: auto; 
-    margin-left: 0;
+    margin-right: 20px;
 }
 
 .institute-name {
@@ -24,7 +24,8 @@ body {
 
 .institute-address {
     font-size: 16px;
-    margin: 0;
+    margin: 10px;
+    margin-top: 30px;
 }
 
 .content {
