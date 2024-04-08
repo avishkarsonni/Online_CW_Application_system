@@ -7,8 +7,9 @@ body {
 .header {
     display: flex;
     align-items: center;
-    background-color: #f1f1f1;
-    padding: 20px;
+    background-color: rgb(15, 24, 188);
+    padding: 10px;
+    color:#ccc
 }
 
 .header-image {
@@ -51,7 +52,7 @@ body {
 }
 
 .eligibility-details button {
-    background-color: #4CAF50;
+    background-color: #0559f5;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -64,9 +65,18 @@ body {
 .eligibility-details button:nth-child(3) {
     background-color: #F00;
 }
-.a-btn{
-    margin: auto;
-        width: 50%;
-        border: 3px solid green;
-        padding: 10px;
-}
+#approve-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #reject-btn {
+    background-color: rgb(255, 55, 0);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }  
