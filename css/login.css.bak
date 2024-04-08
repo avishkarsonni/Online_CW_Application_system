@@ -18,7 +18,7 @@ height: 100%;
             font-family: Verdana, sans-serif;
 
             text-align: center;
-            padding: 20px 0;
+            padding: 10px 0;
             font-size: 36px; /* Adjust size as needed */
             background-color: #e1f5fe; /* Light blue background for contrast */
             margin: 20px 0; /* Add some space around the heading */
