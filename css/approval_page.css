@@ -1,82 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+ body {
+     font-family: sans-serif;
+     margin: 0 auto;
+ }
 
-.header {
-    display: flex;
-    align-items: center;
-    background-color: rgb(15, 24, 188);
-    padding: 10px;
-    color:#ccc
-}
+ .container {
+     width: 50%;
+     margin: 0 auto;
+ }
+
+ .form-group {
+     margin-bottom: 20px;
+ }
 
 .header-image {
-    width: 100px;
-    height: auto;
+    padding-right: 15px;
+    padding-left: 5px;
+}
+
+.kkwagh {
+    display: flex;
+    align-items: center;
+    background-color: #0d6efd;
+    padding: 10px;
+    border: 1px solid #0d6efd;
+    box-shadow: 5px 10px 18px #737373;
+    border-radius: 20px;
+}
+
+ label {
+     display: block;
+     margin-bottom: 5px;
+ }
+
+ input[type="date"],
+ input[type="file"],
+ textarea {
+     width: 100%;
+     padding: 8px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+ }
+
+ .text-box {
+     height: 100px;
+ }
+
+ .button {
+     background-color: #0d6efd;
+     color: white;
+     padding: 12px 20px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     margin: 15px;
+ }
+.proof{
     margin-right: 20px;
 }
-
-.institute-name {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.institute-address {
-    font-size: 16px;
-    margin: 0;
-}
-
-.student-details,
-.course-details,
-.eligibility-details {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.student-details h2,
-.course-details h2,
-.eligibility-details h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.eligibility-details textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-.eligibility-details button {
-    background-color: #0559f5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 10px;
-    
-}
-
-.eligibility-details button:nth-child(3) {
-    background-color: #F00;
-}
-#approve-btn {
-    background-color: green;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #reject-btn {
-    background-color: rgb(255, 55, 0);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }  
+ .button:hover {
+     background-color: #0b5ed7;
+ }
+ .form-group{
+    font-weight: bold;
+        padding: 0.5em;
+        border: thin solid #f1f1f1;
+        border-radius: 3px;
+ }
+ .submit_button{
+    margin-left: 300px;
+ }
