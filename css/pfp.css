@@ -13,7 +13,7 @@ header {
 }
 
 .info-header {
-    background-color: #d3d3d3;
+    background-color: #92dbff;
     border-radius: 50px 50px 50px 50px;
     display: inline-block;
     padding: 10px;
@@ -22,9 +22,9 @@ header {
     height: 50px;
     font-weight: bolder;
     font-size: larger;
-    color: #000000;
+    color: #0a4983;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-shadow: 10px 10px #625f5f;
+    box-shadow: 10px 10px #0a4983;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -32,7 +32,7 @@ header {
 .info-header p{
     font-weight: bold;
     font-size: medium;
-    color: #282828;
+    color: #1061ac;
     margin-top: 1px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

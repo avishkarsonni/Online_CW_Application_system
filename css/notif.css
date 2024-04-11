@@ -1,30 +1,140 @@
-body {
+
+body, html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-    /* min-height: 100vh; */
-
-    /*he comments kadhun ekda bagh kasa vatty tula*/
-
-    
-    background-color: #f1f1f1;
+    background-color: #ffffff;
 }
-.header-image{
-    padding-right: 15px;
-    padding-left: 5px;
+
+header {
+    background-color: #00008B;
+    padding: 10px;
+    text-align: center;
+    color: white;
 }
-.kkwagh{
+
+.info-header {
+    background-color: #92dbff;
+    border-radius: 50px 50px 50px 50px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 1376px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+    color: #0a4983;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 10px 10px #0a4983;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.info-header p{
+    font-weight: bold;
+    font-size: small;
+    color: #1061ac;
+    margin-top: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    height: 20vh;
     display: flex;
-        align-items: center;
-        background-color: #0d6efd;
-        padding: 10px;
-        border:1px solid #0d6efd;
-        box-shadow: 5px 10px 18px #737373;
-        border-radius: 20px;
+    justify-content:start;
+    align-items:center;
+    flex-direction: column;
 }
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 40px;
+}
+
+ul li .icons {
+    font-size: 25px;
+    color: #1b761b;
+    margin: 0 60px;
+}
+
+ul li .label {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1b761b;
+}
+
+ul li .step {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #d7d7c3;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    display: grid;
+    place-items: center;
+    color: ghostwhite;
+    position: relative;
+    cursor: pointer;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    width: 187px;
+    height: 3px;
+    background-color: #d7d7c3;
+    right: 30px;
+}
+
+.first::after {
+    width: 0;
+    height: 0;
+}
+
+ul li .step .awesome {
+    display: none;
+}
+
+ul li .step p {
+    font-size: 18px;
+}
+
+ul li .active {
+    background-color: #1b761b;
+}
+
+li .active::after {
+    background-color: #1b761b;
+
+}
+
+ul li .active p {
+    display: none;
+}
+
+ul li .active .awesome {
+    display: flex;
+}
+
 .container {
     background-color: #fff;
     padding: 30px;
@@ -66,3 +176,4 @@ body {
     width: 100%;
     
 }
+
