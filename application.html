@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Leave Request</title>
+    <title>Apply for CW</title>
     <link rel="stylesheet" href="css\application.css" />
-    <div class="kkwagh">
-      <img
-        class="header-image"
-        src="svg\College_Logo.jpg"
-        alt="svg\College_Logo.jpg"
-      />
-      <h1>
-        K.K. Wagh Institute of Engineering Education & Research (Autonomous)
-      </h1>
-      <br />
-      <div>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</div>
-    </div>
-    <div>
-      <br />
-      <br />
-    </div>
   </head>
   <body>
+    <header>
+      <div class="info-header">
+          K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+          <br>
+          <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+      </div>
+  </header>
     <div class="container">
-      <h2>CW FORM</h2>
+      <h2>CLASSWORK FORM</h2>
 
       <div class="form-group">
         <label for="departure">Date of Departure:</label>
@@ -52,6 +43,7 @@
       <div class="form-group">
         <label for="proof">Enter Proof of Involvement:</label>
         <input type="file" id="proof" name="proof" />
+        <span>Proof of involvement could be a geotag picture of attending event , screenshot of email received through event-co-ordinator, event poster, etc.</span>
       </div>
       <div class="submit_button">
       <button type="button" onclick="alert('Form submitted successfully')" class="button">APPLY</button>
