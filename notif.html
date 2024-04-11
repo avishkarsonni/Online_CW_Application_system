@@ -5,39 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notification Center</title>
     <link rel="stylesheet" href="css\notif.css" />
-    <div class="kkwagh">
-      <img
-        class="header-image"
-        src="svg\College_Logo.jpg"
-        alt="svg\College_Logo.jpg"
-      />
-      <h1>
-        K.K. Wagh Institute of Engineering Education & Research (Autonomous)
-      </h1>
-      <br />
-      <div>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</div>
-    </div>
-    <div>
-      <br />
-      <br />
-    </div>
   </head>
   <body>
-    <div class="container">
-      <h1 class="heading">Notification Center</h1>
-      <div class="notification">
-        <p class="notification-text">Your request has been declined!</p>
-        <p class="notification-details">
-          Denied by Class Coordinator: John Doe on 01/01/2000 at 12:00 PM
-        </p>
-      </div>
-      <div class="notification">
-        <p class="notification-text">Your request has been Accepted!</p>
-        <p class="notification-details">Accepted on 01/01/2000 at 12:00 PM</p>
-      </div>
-      <button class="clear-all-button" onclick="alert('notifications cleared')">
-        Clear All Notifications
-      </button>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <div class="main">
+
+        <ul>
+            <li>
+                <i class="icons awesome fa-solid fa-user"></i>
+                <div class="step first">
+                    <p>1</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">To be Reviewed</p>
+            </li>
+            <li>
+                <i class="icons awesome fa-solid fa-coins"></i>
+                <div class="step second">
+                    <p>2</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By CC</p>
+            </li>
+            <li>
+                <i class="icons awesome fa-solid fa-house"></i>
+                <div class="step third">
+                    <p>3</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By HOD</p>
+            </li>
+            <li>
+                <i class="icons awesome fa-regular fa-star-half-stroke"></i>
+                <div class="step fourth">
+                    <p>4</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By Dean</p>
+            </li>
+        </ul>
     </div>
-  </body>
+
+
+<div class="container">
+    <h1 class="heading">Notification Center</h1>
+    <div class="notification">
+      <p class="notification-text">Your request has been declined!</p>
+      <p class="notification-details">
+        Denied by Class Coordinator: John Doe on 01/01/2000 at 12:00 PM
+      </p>
+    </div>
+    <div class="notification">
+      <p class="notification-text">Your request has been Accepted!</p>
+      <p class="notification-details">Accepted on 01/01/2000 at 12:00 PM</p>
+    </div>
+    <button class="clear-all-button" onclick="alert('notifications cleared')">
+      Clear All Notifications
+    </button>
+  </div>
+</body>
 </html>
