@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Details</title>
-    <link rel="stylesheet" href="css\pfp.css" />
-  </head>
-  <body>
-    <div class="kkwagh">
-      <img
-        class="header-image"
-        src="svg\College_Logo.jpg"
-        alt="svg\College_Logo.jpg"
-      />
-      <h1>
-        K.K. Wagh Institute of Engineering Education & Research (Autonomous)
-      </h1>
-      <br />
-      <div>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</div>
-    </div>
-    <div>
-      <br />
-      <br />
-    </div>
-    <div class="student-details">
-      <h2>Personal Details</h2>
-      <p>Name: XXXX XXXX XXXX</p>
-      <p>Permanent Address: XXXXX XXXXX XXXXX XXXXX XXXX</p>
-      <p>Mobile No.: XXXX-XXX-XXX</p>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K. K. Wagh Institute</title>
+    <link rel="stylesheet" href="css/pfp.css">
 
-    <div class="course-details">
-      <h2>Course Details</h2>
-      <p>Course Year: XX</p>
-      <p>CRN: XXXXXXXXXX</p>
-      <p>Section: XXXX-XXXX</p>
-      <p>Roll No.: XX</p>
-      <p>Admission year: XXXX</p>
-      <p>Current CC: John Doe</p>
-    </div>
-
-    <div class="eligibility-details">
-      <h2>Current Eligibility Details</h2>
-      <p>Attendance (In percentage): XX.XX%</p>
-      <p>Theory Lecture Attendance: XX.XX%</p>
-      <p>Practical Lecture Attendance: XX.XX%</p>
-    </div>
-
-    <div class="apply-button" onclick="location.href='application.html'">
-      <a href="#">Apply for Classwork/Leave</a>
-      <p>
-        TIP: By clicking the button you will be redirected to the page to apply
-        for leave to be reviewed and forwarded to related authorities
-      </p>
-    </div>
-  </body>
+</head>
+<body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <section class="profile-section">
+        <div class="profile-container">
+            <img src="profile-placeholder.png" alt="Profile Image" class="profile-image">
+            <div class="profile-info">
+                <p>NAME :<span>XXXX XXXX XXXX</span></p>
+                <p>Permanent Address :<span> XXXXX XXXXX XXXXX XXXXX XXXXX</span></p>
+                <p>Mobile No. :<span>XXXX-XXX-XXX</span></p>
+            </div>
+        </div>
+        <div class="details-container">
+            <div class="details-block">
+                <h3>Personal Details:</h3>
+                <p>CRN: <span>XXXXXXXXX</span></p>
+                <p>Course Year:<span> XX</span></p>
+                <p>Section: <span>XXXX-XXXX<span></p>
+                <p>Roll No. :<span>XX</span></p>
+                <p>Admission year: <span>XXXX</span></p>
+                <p>Current CC: <span>John Doe</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Current Eligibility details :</h3>
+                <p>Attendance (In percentage) : <span>XX.XX%</span></p>
+                <p>Theory Lecture Attendance : <span>XX.XX %</span></p>
+                <p>Practical Lecture Attendance : <span>XX.XX %</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Apply for Classwork / Leave :</h3>
+                <div class="apply-container">
+                <p class="tip">TIP: By clicking the button you will be redirected to the page to apply for leave to be reviewed and forwarded to related authorities</p>
+                <button>Apply</button>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
