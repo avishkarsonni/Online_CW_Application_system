@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Center</title>
+    <link rel="stylesheet" href="css\notif.css" />
+  </head>
+  <body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <div class="main">
+
+        <ul>
+            <li>
+                <div class="step first">
+                    <p>1</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">To be Reviewed</p>
+            </li>
+            <li>
+               
+                <div class="step second">
+                    <p>2</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By CC</p>
+            </li>
+            <li>
+               
+                <div class="step third">
+                    <p>3</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By HOD</p>
+            </li>
+            <li>
+                
+                <div class="step fourth">
+                    <p>4</p>
+                    <i class="awesome fa-solid fa-check"></i>
+                </div>
+                <p class="label">Reviewed By Dean</p>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="character-list-container"></ul>
+    <div class="container">
+      <h1 class="heading">Notification Center</h1>
+      <!--
+      <script id="character-template" type="text/x-handlebars-template">
+            <div class="notification">
+              {{#each cwRequests}}
+              <li class="character">
+                <p class="notification-text">{{#reviewed reviwedByCC reviwedByHod reviwedByDean}}</p>
+                <p class="notification-details">
+                  Denied by Dean: {{CurrentDean}}{{reviwedByCC}}
+              </p>
+              {{/reviewed}}
+            </li>
+              {{/each}}
+              </div>
+            </script>  
+        -->
+      <button class="clear-all-button" onclick="alert('notifications cleared')">
+          Clear All Notifications
+      </button>
+
+  </div>
+</body>
+
+</html>
+<!--
+<script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
+<script src='js/jquery-2.2.3.min.js'></script>
+<script src='js/handlebars-v4.0.5.js'></script>
+<script src='app.js'></script>
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+-->

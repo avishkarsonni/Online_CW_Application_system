@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin_HOD</title>
+    <link rel="stylesheet" href="css\admin.css" />
+  </head>
+  <body>
+    <header>
+      <div class="info-header">
+          K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+          <br>
+          <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+      </div>
+  </header>
+  <div class="content">
+      <div class="student-details">
+        <div class="caption1">
+          <h2>&#160;Personal Details&#160;</h2>
+        </div>
+        <p>Name:<span> {{hodData.name}}</span></p>
+        <p>HOD of Dept:<span> {{hodData.department}}</span></p>
+        <p>Mobile No.: <span>{{hodData.mobile}}</span></p>
+        <p>CRN: <span>{{hodData.crn}}</span></p>
+      </div>
+      <br />
+      <div class="application_recieved">
+        <h2>&#160; Applications Recieved &#160;</h2>
+      </div>
+      <ul>
+        {{#each hodRequests}}
+        <div class="all_notification">
+          <li>
+            <div class="notification">
+              
+                <p class="name">Application Received by - <span>{{this.studcrn}}</span></p>
+                <p class="date">{{this.createdAt}}</p>
+                <p class="status">Waiting for your approval</p>
+                <button class="view-button">VIEW</button>
+              </div>
+              
+        </div>
+        <li>
+        {{/each}}
+      </ul>
+    
+    </div>
+</body>
+</html>

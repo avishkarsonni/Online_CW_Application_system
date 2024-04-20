@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="css/pfp.css">
+<body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)  <a href="notif.html"><i class="fa-solid fa-bell"></i></a>
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+    <section class="profile-section">
+        
+        <div class="profile-container">
+            <img src="{{userData.profilephoto}}" alt="svg/user.svg" class="profile-image">
+            <div class="profile-info">
+                <p>NAME :<span>{{userData.name}}</span></p>
+                <p>Permanent Address :<span> {{userData.Address}}</span></p>
+                <p>Mobile No. :<span>{{userData.mobile}}</span></p>
+            </div>
+        </div>
+        <div class="details-container">
+            <div class="details-block">
+                <h3>Personal Details:</h3>
+                <p>CRN: <span>{{userData.crn}}</span></p>
+                <p>Course Year:<span> {{userData.class}}</span></p>
+                <p>Section: <span>{{userData.div}}<span></p>
+                <p>Roll No. :<span>{{userData.Roll}}</span></p>
+                <p>Admission year: <span>{{userData.AdmissionYear}}</span></p>
+                <p>Current CC: <span>{{userData.CurrentCC}}</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Current Eligibility details :</h3>
+                <p>Attendance (In percentage) : <span>{{userData.NetAttendace}} %</span></p>
+                <p>Theory Lecture Attendance : <span>{{userData.ThAttendance}} %</span></p>
+                <p>Practical Lecture Attendance : <span>{{userData.PrAttendance}} %</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Apply for Classwork / Leave :</h3>
+                <div class="apply-container">
+                <p class="tip">Note: By clicking the button you will be redirected to the page to apply for leave to be reviewed and forwarded to related authorities</p>
+                <form action="/application" method="GET">
+                <button type="submit" onclick="validate()">Apply</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    function validate(){
+        if({{userData.NetAttendace}} < 75){
+            alert("Attendance is less than 75% Can't apply for Classwork!");
+        }
+    }
+</script>
+</html>
+<script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
+
