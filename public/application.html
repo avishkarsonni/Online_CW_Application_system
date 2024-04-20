@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apply for CW</title>
+    <link rel="stylesheet" href="css\application.css" />
+  </head>
+  <body>
+    <header>
+      <div class="info-header">
+          K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+          <br>
+          <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+      </div>
+  </header>
+    <div class="container">
+      <h2>CLASSWORK FORM</h2>
+
+      <div class="form-group">
+        <label for="departure">Date of Departure:</label>
+        <input
+          type="date"
+          id="departure"
+          name="departure"
+          placeholder="DD/MM/YYYY"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="return">Date of Return:</label>
+        <input type="date" id="return" name="return" placeholder="DD/MM/YYYY" />
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for your Leave:</label>
+        <textarea
+          class="text-box"
+          id="reason"
+          name="reason"
+          placeholder="Describe the reason...."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="proof">Enter Proof of Involvement:</label>
+        <input type="file" id="proof" name="proof" />
+        <span>Proof of involvement could be a geotag picture of attending event , screenshot of email received through event-co-ordinator, event poster, etc.</span>
+      </div>
+      <div class="submit_button">
+      <button type="button" onclick="alert('Form submitted successfully')" class="button">APPLY</button>
+    </div>
+    </div>
+  </body>
+</html>

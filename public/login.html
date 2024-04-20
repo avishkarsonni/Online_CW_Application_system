@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css\login.css" />
+  </head>
+  <body>
+    <div style="border: 30px solid #0d6efd; padding: 20px">
+      <section class="vh-100">
+        <div class="container-fluid h-custom">
+          <h1 class="blue-heading">ClassWork System</h1>
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="svg\draw2.webp" class="img-fluid" alt="Sample image" />
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <form method="POST" action="/login">
+                <label class="form-label" for="form3Example2">User Type</label>
+                <div class="form-outline mb-3">
+                  <select
+                    name="userType"
+                    class="form-select form-select-lg mb-4"
+                    aria-label=".form-select-lg example">
+                    <option style="color: #d3d3d3">Select</option>
+                    <option value="admin">Academic Dean</option>
+                    <option value="admin">Head of Department</option>
+                    <option value="admin">Class Co-Ordinator</option>
+                    <option value="student">Student</option>
+                  </select>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3">Enter CRN
+                    </label>
+                  <input
+                    type="text"
+                    name="crn"
+                    id="form3Example3"
+                    class="form-control form-control-lg"
+                    placeholder="Enter a valid CRN"
+                  />
+                </div>
+                <div class="form-outline mb-3">
+                  <label class="form-label" for="form3Example3"
+                    >Enter password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="form3Example4"
+                    class="form-control form-control-lg"
+                    placeholder="Enter password"
+                  />
+                </div>
+                <a href="forgotpassword.html" class="text-body"
+                  >Forgot password?</a
+                >
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                ></div>
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem">
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="F:/Online_CW_Application_system/js/login.js"></script>
+  </body>
+</html>
