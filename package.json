@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "alert": "^6.0.1",
+    "alert-node": "^5.0.3",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "express-validator": "^7.0.1",
+    "handlebars": "^4.7.8",
+    "hbs": "^4.2.0",
+    "jquery": "^3.7.1",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1",
+    "multer": "^1.4.5-lts.1",
+    "node-notifier": "^10.0.1",
+    "nodemon": "^3.1.0",
+    "popups": "^1.1.3"
+  },
+  "name": "online_cw_application_system",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
