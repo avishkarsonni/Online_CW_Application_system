@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Apply for CW</title>
-    <link rel="stylesheet" href="css\application.css" />
+    <link rel="stylesheet" href="\css\application.css" />
   </head>
   <body>
     <header>
@@ -52,7 +52,7 @@
 
       <div class="form-group">
         <label for="proof">Enter Proof of Involvement:</label>
-        <input type="file" id="proof" name="proof" onchange="validateFile(this)" accept=".pdf" required/>
+        <input type="file" id="proof" name="proof" onchange="validateFile(this)" accept=".pdf,.jpeg,.jpg,.png" required/>
         <span>Proof of involvement could be a geotag picture of attending event , screenshot of email received through event-co-ordinator, event poster, etc. but it should be in pdf format only</span>
       </div>
       <div class="submit_button">
@@ -86,9 +86,11 @@
     var fileName = input.value;
     var idxDot = fileName.lastIndexOf('.') + 1;
     var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-    if (extFile != 'pdf') {
-      alert('Only PDF files are allowed!');
-      input.value = ''; // Clear the file input
+    if (extFile == 'pdf' || extFile == 'jpeg' || extFile == 'jpg' || extFile == 'png') {
+      
+    }else{
+      alert('Only PDF, jpeg, jpg, png files are allowed!');
+       // Clear the file input
     }
   }
 </script>

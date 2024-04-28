@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link rel="stylesheet" href="/css/granted_cws.css">
+
+<body>
+    <header>
+        <form action="/granted_cwss" method="post">
+        <div class="info-header">
+		<div class="info-header1">
+		<label>Department:</label>
+           <select id="dept" name="dept">
+		   <option>select</option>
+		   <option value="CS">CS</option>
+		   <option value="AI&DS"> AI&DS </option>
+		   </select>
+		   </div>
+		   <div class="info-header1">
+		<label>Class:</label>
+           <select id="classroom" name="classroom">
+		   <option>select</option>
+		   <option value="F.Y. B.Tech">F.Y. B.Tech</option>
+		   <option value="S.Y. B.Tech">S.Y. B.Tech</option>
+		   </select>
+		   </div>
+		   <div class="info-header1">
+		<label>Div:</label>
+           <select id="division" name="division">
+		   <option>select</option>
+		   <option value="A">A</option>
+		   <option value="B">B</option>
+		   </select>
+		   </div>
+           <div class="info-header1">
+           <button id="showcws" type="submit">Show</button>
+           </div>
+        </div>
+    </form>
+    </header>
+    <section class="profile-section">
+	<h1 class="blue-heading">Granted Class Works</h1>
+        <table>
+  <thead>
+    <th>CRN</th>
+    <th>Roll No</th>
+    <th>Name</th>
+	<th>Date(From)</th>
+	<th>Date(To)</th>
+  </thead>
+  <tbody>
+    {{#each cwData}}
+    <tr>
+    <td>{{this.studcrn}}</td>
+    <td>{{this.roll}}</td>
+    <td>{{this.name}}</td>
+	<td>{{formatDate this.dateofdeparture}}</td>
+	<td>{{formatDate this.dateofreturn}}</td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+  
+</table>
+    </section>
+</body>
+</html>
+
+<script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>

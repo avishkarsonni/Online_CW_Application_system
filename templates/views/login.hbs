@@ -14,13 +14,13 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="\css\login.css" />
   </head>
   <body>
     <div style="border: 30px solid #0d6efd; padding: 20px">
       <section class="vh-100">
         <div class="container-fluid h-custom">
-          <h1 class="blue-heading">ClassWork System</h1>
+          <h1 class="blue-heading">ClassWork System</h1><span><form method="get" action="/granted_cws"><button type="submit"></button></form></span>
           <div
             class="row d-flex justify-content-center align-items-center h-100"
           >
@@ -76,6 +76,7 @@
                     type="submit"
                     name="submitform"
                     class="btn btn-primary btn-lg"
+                    onclick="validateForm()"
                     style="padding-left: 2.5rem; padding-right: 2.5rem">
                     Login
                   </button>
@@ -86,6 +87,26 @@
         </div>
       </section>
     </div>
+    <script>
+      function validateForm() {
+        const userType = document.getElementById('ut').value;
+        const crn = document.getElementById('un').value;
+        const password = document.getElementById('pp').value;
+    
+          if (!/^\d{10}$/.test(crn)) {
+            alert('CRN for Student must be 10 digits.');
+            return false;
+          }
+        
+    
+        if (!/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}/.test(password)) {
+          alert('Password must be at least 8 characters long .');
+          return false;
+        }
+    
+        return true;
+      }
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
     <script src="F:/Online_CW_Application_system/js/login.js"></script>
   </body>

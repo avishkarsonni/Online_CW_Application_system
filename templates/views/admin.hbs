@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin_CC</title>
-    <link rel="stylesheet" href="css\admin.css" />
+    <link rel="stylesheet" href="/css/hod.css" />
   </head>
   <body>
     <header>
       <div class="info-header">
-          K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+          K.K. Wagh Institute of Engineering Education & Research (Autonomous) <span><a href="/login"><span>{{ui}}</span></a></span><span><form method="post" action="/statistics"><button type="submit"></button></form></span>
           <br>
           <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
       </div>
   </header>
-  <form action="" method="post">
+  
   <div class="content">
       <div class="student-details">
         <div class="caption1">
@@ -29,10 +29,11 @@
       <div class="application_recieved">
         <h2>&#160; Applications Recieved &#160;</h2>
       </div>
-      <ul>
-      {{#each ccRequests}}
       <div class="all_notification">
-        <li>
+      
+      {{#each ccRequests}}
+      
+      <form action="/approve/{{this.srno}}" method="post">
           <div class="notification">
             
               <p class="name">Application Received by - <span>{{this.studcrn}}</span></p>
@@ -40,13 +41,13 @@
               <p class="status">Waiting for your approval</p>
               <button class="view-button">VIEW</button>
             </div>
-            
-      </div>
-      <li>
-      {{/each}}
-    </ul>
+          </form>
       
+      
+      {{/each}}
+    
+  </div>
     </div>
-  </form>
+  
 </body>
 </html>

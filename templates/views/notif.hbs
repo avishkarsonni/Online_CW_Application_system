@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notification Center</title>
-    <link rel="stylesheet" href="css\notif.css" />
+    <link rel="stylesheet" href="/css/notif.css" />
   </head>
   <body>
     <header>
@@ -13,36 +13,37 @@
             <br>
             <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
         </div>
+
     </header>
     <div class="main">
 
         <ul>
-            <li>
-                <div class="step first">
+            <li id="f">
+                <div id="step_first" class="step first">
                     <p>1</p>
                     <i class="awesome fa-solid fa-check"></i>
                 </div>
                 <p class="label">To be Reviewed</p>
             </li>
-            <li>
+            <li id="s">
                
-                <div class="step second">
+                <div id="step_second" class="step second">
                     <p>2</p>
                     <i class="awesome fa-solid fa-check"></i>
                 </div>
                 <p class="label">Reviewed By CC</p>
             </li>
-            <li>
+            <li id="t">
                
-                <div class="step third">
+                <div id="step_third" class="step third">
                     <p>3</p>
                     <i class="awesome fa-solid fa-check"></i>
                 </div>
                 <p class="label">Reviewed By HOD</p>
             </li>
-            <li>
+            <li id="o">
                 
-                <div class="step fourth">
+                <div id="step_fourth" class="step fourth">
                     <p>4</p>
                     <i class="awesome fa-solid fa-check"></i>
                 </div>
@@ -51,37 +52,94 @@
         </ul>
     </div>
 
-    <ul class="character-list-container"></ul>
     <div class="container">
-      <h1 class="heading">Notification Center</h1>
-      <!--
-      <script id="character-template" type="text/x-handlebars-template">
-            <div class="notification">
-              {{#each cwRequests}}
-              <li class="character">
-                <p class="notification-text">{{#reviewed reviwedByCC reviwedByHod reviwedByDean}}</p>
-                <p class="notification-details">
-                  Denied by Dean: {{CurrentDean}}{{reviwedByCC}}
-              </p>
-              {{/reviewed}}
-            </li>
-              {{/each}}
-              </div>
-            </script>  
-        -->
-      <button class="clear-all-button" onclick="alert('notifications cleared')">
-          Clear All Notifications
-      </button>
-
-  </div>
+        <h1 class="heading">Notification Center</h1>
+        <div class="notification">
+          <p id="step_content1" class="notification-text">Your request has been declined!</p>
+          <p id="step_content2" class="notification-details">
+            Denied by Class Coordinator: John Doe on 01/01/2000 at 12:00 PM
+          </p>
+        </div>
+    </div>
 </body>
+<script type="text/javascript">
+    var reviewedByCC = '{{cwreq.reviwedByCC}}';
+    console.log(reviewedByCC);
+    var reviewedByHod = '{{cwreq.reviwedByHod}}';
+    var reviewedByDean = '{{cwreq.reviwedBYDean}}';
+    const date1 = new Date('{{cwreq.dateofdeparture}}');
+    const formattedDate1 = date1.toLocaleDateString('en-GB');
+    const date2 = new Date('{{cwreq.dateofreturn}}');
+    const formattedDate2 = date2.toLocaleDateString('en-GB');
 
+    var step1 = document.getElementById('step_first');
+    var step2 = document.getElementById('step_second');
+    var step3 = document.getElementById('step_third');
+    var step4 = document.getElementById('step_fourth');
+    var content1 = document.getElementById('step_content1');
+    var content2 = document.getElementById('step_content2');
+
+    if(reviewedByCC == 'pending' && reviewedByHod == 'pending' && reviewedByDean == 'pending'){
+        step1.style["background-color"]="#E9A908";
+        step2.style["background-color"]="#d7d7c3";
+        step3.style["background-color"]="#d7d7c3";
+        step4.style["background-color"]="#d7d7c3";
+        content1.innerHTML = "Your Request is under Review...";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+    else if(reviewedByCC == 'accepted' && reviewedByHod == 'pending' && reviewedByDean == 'pending'){
+        step1.style["background-color"]="green";
+        step2.style["background-color"]="green";
+        step3.style["background-color"]="#d7d7c3";
+        step4.style["background-color"]="#d7d7c3";
+        content1.innerHTML = "Your Request is accepted By CC";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+    else if(reviewedByCC == 'accepted' && reviewedByHod == 'accepted' && reviewedByDean == 'pending'){
+        step1.style["background-color"]="green";
+        li1.style["background-color"]="#E9A908";
+        step2.style["background-color"]="green";
+        li2.style["background-color"]="#E9A908";
+        step3.style["background-color"]="green";
+        step4.style["background-color"]="#d7d7c3";
+        content1.innerHTML = "Your Request is accepted By HOD";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+    else if(reviewedByCC == 'accepted' && reviewedByHod == 'accepted' && reviewedByDean == 'accepted'){
+        step1.style["background-color"]="green";
+        step2.style["background-color"]="green";
+        step3.style["background-color"]="green";
+        step4.style["background-color"]="green";
+        content1.innerHTML = "Congratulations your class work request has been accepted!!";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+    else if(reviewedByCC == 'rejected' && reviewedByHod == 'pending' && reviewedByDean == 'pending'){
+        step1.style["background-color"]="red";
+        step2.style["background-color"]="red";
+        step3.style["background-color"]="#d7d7c3";
+        step4.style["background-color"]="#d7d7c3";
+        content1.innerHTML = "Your Request is declined By CC";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+    else if(reviewedByCC == 'accepted' && reviewedByHod == 'rejected' && reviewedByDean == 'pending'){
+        step1.style["background-color"]="red";
+        step2.style["background-color"]="red";
+        step3.style["background-color"]="red";
+        step4.style["background-color"]="#d7d7c3";
+        content1.innerHTML = "Your Request is declined By HOD";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+    else if(reviewedByCC == 'accepted' && reviewedByHod == 'accepted' && reviewedByDean == 'rejected'){
+        step1.style["background-color"]="red";
+        step2.style["background-color"]="red";
+        step3.style["background-color"]="red";
+        step4.style["background-color"]="red";
+        content1.innerHTML = "Your Request is declined By Dean";
+        content2.innerHTML = " From: " + formattedDate1 + " To: " + formattedDate2;
+    }
+
+</script>
 </html>
-<!--
-<script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
-<script src='js/jquery-2.2.3.min.js'></script>
-<script src='js/handlebars-v4.0.5.js'></script>
-<script src='app.js'></script>
-<!-- Include jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
--->
+
+
+  

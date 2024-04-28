@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student</title>
-    <link rel="stylesheet" href="css/pfp.css">
+    <link rel="stylesheet" href="\css\pfp.css">
+   
+</head>
 <body>
     <header>
         <div class="info-header">
-            K.K. Wagh Institute of Engineering Education & Research (Autonomous)  <a href="notif.html"><i class="fa-solid fa-bell"></i></a>
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)  <a href="/login" title="Logout"><span>{{ui}}</span></a><span><form method="get" action="/notif/{{userData.crn}}"><button type="submit"></button></form></span>
             <br>
             <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
         </div>
     </header>
+    
     <section class="profile-section">
         
         <div class="profile-container">
@@ -43,7 +46,7 @@
                 <h3>Apply for Classwork / Leave :</h3>
                 <div class="apply-container">
                 <p class="tip">Note: By clicking the button you will be redirected to the page to apply for leave to be reviewed and forwarded to related authorities</p>
-                <form action="/application" method="GET">
+                <form action="/application" method="GET" >
                 <button type="submit" onclick="validate()">Apply</button>
                 </form>
             </div>
@@ -57,6 +60,7 @@
             alert("Attendance is less than 75% Can't apply for Classwork!");
         }
     }
+
 </script>
 </html>
 <script src="https://kit.fontawesome.com/48bcbf2c30.js" crossorigin="anonymous"></script>
