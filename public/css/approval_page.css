@@ -1,0 +1,204 @@
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #00008B;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+.info-header {
+    background-color: #92dbff;
+    border-radius: 50px 50px 50px 50px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 1376px;
+    height: 50px;
+    font-weight: bolder;
+    font-size: larger;
+    color: #0a4983;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 10px 10px #0a4983;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.info-header p{
+    font-weight: bold;
+    font-size: medium;
+    color: #1061ac;
+    margin-top: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.profile-section {
+            margin: 20px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            background-color: #dddddd;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            background-color: #e6ffe6; /* Light green background */
+            padding: 10px;
+			font-weight: bolder;
+            border-radius: 5px;
+        }
+
+        .profile-info p span{
+            margin: 5px 0;
+            background-color: #e6ffe6; /* Light green background */
+            padding: 10px;
+			font-weight:normal;
+            border-radius: 5px;
+        }
+
+        .details-container {
+            border-top: 2px solid green;
+            padding-top: 10px;
+        }
+
+        .details-block {
+            margin-bottom: 20px;
+        }
+
+        .details-block h3 {
+            background-color: #e6ffe6; /* Light green background */
+            color: rgb(1, 48, 19);
+            padding-left: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .details-block p {
+            padding-left: 10px;
+            font-weight: bolder;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .details-block p span{
+            margin: 5px 0;
+            padding: 10px;
+			font-weight:normal;
+            border-radius: 5px;
+        }
+
+        .apply-container {
+            margin-bottom: 20px;
+        }
+
+        .apply-container button {
+            background-color: #FFA500;
+            border: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            font-size: large;
+            font-weight: bolder;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            margin-left: 15px;
+         }
+
+        .apply-container p {
+            padding-left: 10px;
+            margin: 5px 0;
+            text-align: center;
+        }
+        .details-block .apply-container #rfl{
+            margin-left: 10px;
+            border:1px solid black;
+            border-radius: 5%;
+            border-width: 2px;
+            font-family: 'Times New Roman', Times, serif;
+            color: darkgray;
+        }
+
+        .a-btn {
+            margin-left: 40%;
+            display: flex; /* Use flexbox for layout */
+        }
+        
+        .a-btn form {
+            margin-right: 10px; /* Add some space between the buttons */
+        }
+        .a-btn #approve-btn{
+            background-color: green;
+            border-radius: 5px;
+            color: white;
+            width: 100px;
+            height: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold; 
+            font-size: larger;
+            margin-right: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .a-btn #rejectBtn{
+            cursor: pointer;
+            background-color: red;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            color: white;
+            width: 100px;
+            height: 40px;   
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold; 
+            font-size:larger ;
+        }
+
+        .container#blur.active{
+            filter: blur(20px);
+            pointer-events: none;
+            user-select: none;
+        }
+        #popup{
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 1000px;
+            height:500px;
+            padding: 50px;
+            box-shadow: 0 5px 30px rgba(0,0,0,.30);
+            background: #fff;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #popup.active{
+            top:50%;
+            visibility: visible;
+            opacity: 1;
+            transition: 0.5s;
+        }

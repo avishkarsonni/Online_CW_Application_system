@@ -1,0 +1,67 @@
+#chart1{
+    margin-top: 100px;
+    margin-left: 10px;
+    width:100%;
+    border: 2px solid black;
+    margin-bottom: 100px;
+  }
+  #chart2{
+    margin-top: 100px;
+    width:100%;
+    border: 2px solid black;
+    margin-bottom: 100px;
+  }
+  #oneline {
+    display: flex;
+  }
+  
+  #chart1,
+  #chart2 {
+    flex: 1;
+    margin-right: 20px;
+  }
+  body, html {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+  }
+  
+  header {
+      background-color: #00008B;
+      padding: 10px;
+      text-align: center;
+      color: white;
+  }
+  
+  .info-header {
+      background-color: #92dbff;
+      border-radius: 50px 50px 50px 50px;
+      display: inline-block;
+      padding: 10px;
+      margin-top: 10px;
+      width: 1376px;
+      height: 50px;
+      font-weight: bolder;
+      font-size: larger;
+      color: #0a4983;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      box-shadow: 10px 10px #0a4983;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  
+  .info-header p{
+      font-weight: bold;
+      font-size: medium;
+      color: #1061ac;
+      margin-top: 1px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  #piechart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }

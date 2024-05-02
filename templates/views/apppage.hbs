@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pending Approvals</title>
+    <link rel="stylesheet" href="\css\approval_page.css" />
+
+  </head>
+  <body>
+    <header>
+        <div class="info-header">
+            K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+            <br>
+            <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+        </div>
+    </header>
+	<div class="container" id="blur">
+	<section class="profile-section">
+	<div class="profile-container">
+            <img src="{{srnorequest.profileimage}}" alt="Profile Image" class="profile-image">
+            <div class="profile-info">
+                <p>Roll No. :<span>{{srnorequest.roll}}</span></p>
+                <p>CRN: <span>{{srnorequest.studcrn}}</span></p>
+                <p>NAME :<span>{{srnorequest.name}}</span></p>
+                <p>Email. :<span>{{srnorequest.studemail}}</span></p>
+            </div>
+        </div>
+		<div class="details-container">
+            <div class="details-block">
+                <h3>Course Details:</h3>
+                <p>Course Year:<span>{{srnorequest.cy}}</span></p>
+                <p>Section: <span>{{srnorequest.sect}}<span></p>
+                <p>Current CC: <span>{{srnorequest.currentcc}}</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Current Eligibility details :</h3>
+                <p>Attendance (In percentage) : <span>{{srnorequest.netattendance}}%</span></p>
+            </div>
+            <div class="details-block">
+                <h3>Reason For Leave :</h3>
+                <div class="apply-container">
+                    <div class="rfl">
+                        <label for="leave">
+                            {{srnorequest.reason}}
+                        </label>
+            </div>
+                </div>
+            </div>
+            
+            <div class="details-block">
+                <h3>Proof of Involvement :</h3>
+                <div class="apply-container">
+                    <button onclick="toggle(this)" type="button">View</button>
+                    <br/>
+                    <br/>
+                    <br/>       
+                   
+                </div>
+            </div>
+            <div class="details-block">
+            <div class="a-btn">
+                <form action="/accept/{{srnorequest.srno}}" method="post">
+                    <!-- Add a hidden input field to indicate the action -->
+                    <input type="hidden" name="action" value="approve">
+                    <button id="approve-btn" type="submit">Approve</button>
+                </form>
+                <form action="/reject/{{srnorequest.srno}}" method="post" >
+                    <!-- Add a hidden input field to indicate the action -->
+                    <input type="hidden" name="action" value="reject">
+                    <input type="hidden" name="notes" id="notes">
+                    <button id="rejectBtn" type="submit">Reject</button>
+                    
+                </form>
+            </div>
+        </div>
+            </div>
+			</section>
+        </div>
+		<div id="popup">
+    <!--<img src="{{srnorequest.proof}}" alt="Proof Not Available" />-->
+    <iframe id="pdfViewer" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+    <button onclick="toggle()" type="button">Close</button>
+  </div>
+  <script type="text/javascript">
+    function toggle(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active');
+    
+        // Get the proof string
+        var proofString = "{{srnorequest.proof}}";
+    
+        // Extract the filename from the proof string
+        var filename = proofString.substring(proofString.lastIndexOf('/') + 1);
+    
+        // Construct the iframe source URL with the extracted filename
+        var iframeSrc = "/uploads/" + filename;
+    
+        // Set the iframe source
+        document.getElementById('pdfViewer').src = iframeSrc;
+    }       
+</script>
+  </body>
+  </html>

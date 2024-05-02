@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apply for CW</title>
+    <link rel="stylesheet" href="\css\application.css" />
+  </head>
+  <body>
+    <header>
+      <div class="info-header">
+          K.K. Wagh Institute of Engineering Education & Research (Autonomous)
+          <br>
+          <p>Hirabai Haridas Vidyanagri, Amrutdham, Panchavati, Nashik</p>
+      </div>
+  </header>
+<div class="container">
+      <h2>CLASSWORK FORM</h2>
+    <form action="/notif" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="departure">Date of Departure:</label>
+        <input
+          required
+          type="date"
+          id="departure"
+          name="departure"
+          placeholder="DD/MM/YYYY"
+          min="<%= getMinDate() %>"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="return">Date of Return:</label>
+        <input 
+        required
+        type="date" 
+        id="returned" 
+        name="returned" 
+        placeholder="DD/MM/YYYY" 
+        min="<%= getMinDate() %>"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for your Leave:</label>
+        <textarea
+          required
+          class="text-box"
+          id="reason"
+          name="reason"
+          placeholder="Describe the reason...."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="proof">Enter Proof of Involvement:</label>
+        <input type="file" id="proof" name="proof" onchange="validateFile(this)" accept=".pdf,.jpeg,.jpg,.png" required/>
+        <span>Proof of involvement could be a geotag picture of attending event , screenshot of email received through event-co-ordinator, event poster, etc. but it should be in pdf format only</span>
+      </div>
+      <div class="submit_button">
+       <button type="submit" name="apply" class="button">APPLY</button>
+    </div>
+  </form>
+</div>
+<script>
+  function getMinDate() {
+    var today = new Date();
+    today.setDate(today.getDate() + 2); // Start from the day after tomorrow
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; // January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    return yyyy + '-' + mm + '-' + dd;
+  }
+
+  document.getElementById('departure').setAttribute('min', getMinDate());
+  document.getElementById('returned').setAttribute('min', getMinDate());
+
+  function validateFile(input) {
+    var fileName = input.value;
+    var idxDot = fileName.lastIndexOf('.') + 1;
+    var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+    if (extFile == 'pdf' || extFile == 'jpeg' || extFile == 'jpg' || extFile == 'png') {
+      
+    }else{
+      alert('Only PDF, jpeg, jpg, png files are allowed!');
+       // Clear the file input
+    }
+  }
+</script>
+  </body>
+</html>
