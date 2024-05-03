@@ -6,11 +6,14 @@ const multer = require("./middlewares/upload");
 const mongoose = require("mongoose");
 const notifier = require('node-notifier');
 const nodemailer = require('nodemailer');
+const otpGenerator = require('otp-generator');
+const bodyParser = require('body-parser');
 //"use strict";
 //const prompt = require('prompt-sync')({sigint: true});
 const moment = require('moment');
 const WeeklyReport = require("./models/weekly_report");
 const cron = require('node-cron');
+const router = express.Router();
 
 
 const app = express();
@@ -61,6 +64,10 @@ hbs.registerHelper("reviewed",
 //app.use(express.json());
 //console.log(path.join(__dirname,"../public"));
 //const student = require("models/student");
+
+app.set('view engine', 'hbs');
+app.set('views', template_path);
+hbs.registerPartials(partials_path);
 
 const db = require("./db/conn");
 const Students = require("./models/students");
@@ -842,4 +849,108 @@ app.listen(port, ()=>{
             console.log('Connect Success ');
         })*/
     console.log('server running ');
+});
+
+const pwdResetSchema = new mongoose.Schema({
+    email: String,
+    otp: String
+});
+const PwdReset = mongoose.model('PwdReset', pwdResetSchema, 'pwd_reset'); // Specify collection name
+
+// Middleware to parse URL-encoded and JSON request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.post('/send_otp', async (req, res) => {
+    try {
+        const email = req.body.email;
+        const otp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
+
+        // Send the OTP via email
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: "classsworks@gmail.com",
+                pass: "qbuv lqyd syoi zftr"
+            }
+        });
+
+        let mailOptions = {
+            from: 'classsworks@gmail.com',
+            to: email,
+            subject: 'Your OTP',
+            text: `Your OTP is ${otp}`
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+
+        // Save the OTP and email to the PwdReset collection
+        const pwdReset = new PwdReset({ email: email, otp: otp.toString() });
+        await pwdReset.save();
+
+        res.status(200).send('OTP sent successfully');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred while trying to send the OTP');
+    }
+});
+app.get('/otp_enter', (req, res) => {
+    res.render('otp_enter');
+});
+
+app.get('/password_reenter', (req, res) => {
+    res.render('password_reenter');
+});
+
+app.post('/verify_otp', async (req, res) => {
+    try {
+        const email = req.body.email;
+        const otp = req.body.otp;
+
+        // Retrieve the document with the provided email and OTP
+        const pwdReset = await PwdReset.findOne({ email: email, otp: otp });
+
+        if (pwdReset) {
+            // If the document is found, delete it and redirect to the password reenter page
+            await PwdReset.deleteOne({ _id: pwdReset._id });
+            res.redirect('/password_reenter');
+        } else {
+            // If no document is found, redirect to the login page
+            res.redirect('/login');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred while trying to verify the OTP');
+    }
+});
+
+app.post('/change_password', async (req, res) => {
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+        const confirmPassword = req.body.confirm_password;
+
+        // Check if the password and confirm password fields match
+        if (password !== confirmPassword) {
+            return res.status(400).send('The password and confirm password fields do not match');
+        }
+
+        // Update the password for the document with the provided email in the Students collection
+        const student_ = await student.findOneAndUpdate({ email: email }, { password: password }, { new: true });
+
+        if (student_) {
+            res.status(200).send('Password changed successfully');
+        } else {
+            res.status(404).send('No student found for the provided email');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred while trying to change the password');
+    }
 });

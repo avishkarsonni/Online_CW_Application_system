@@ -8,6 +8,8 @@
 <body>
     <h1>Enter OTP</h1>
     <form action="/verify_otp" method="post">
+        <label for="email">Enter Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
         <label for="otp">Enter OTP:</label><br>
         <input type="text" id="otp" name="otp" required><br><br>
         <button type="submit">Submit OTP</button>

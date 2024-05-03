@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  </head>
-  <body>
+</head>
+<body>
 <div class="bg-light py-3 py-md-5">
     <div class="container">
       <div class="row justify-content-md-center">
@@ -24,7 +24,7 @@
                 <h2 class="fs-6 fw-normal text-center text-secondary m-0 px-md-5">Provide the email address associated with your account to recover your password.</h2>
               </div>
             </div>
-            <form action="#!">
+            <form id="resetPasswordForm" action="/otp_enter" method="post"> <!-- Changed action to /otp_enter -->
               <div class="row gy-3 gy-md-4 overflow-hidden">
                 <div class="col-12">
                   <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-12">
                   <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="submit">Reset Password</button>
+                    <button id="resetPasswordBtn" class="btn btn-primary btn-lg" type="button">Reset Password</button> <!-- Changed type to "button" -->
                   </div>
                 </div>
               </div>
@@ -49,7 +49,6 @@
                 <hr class="mt-5 mb-4 border-secondary-subtle">
                 <div class="d-flex gap-4 justify-content-center">
                   <a href="#!" class="link-secondary text-decoration-none">Log In</a>
-                  
                 </div>
               </div>
             </div>
@@ -58,5 +57,28 @@
       </div>
     </div>
   </div>
-  </body>
+
+<script>
+        document.getElementById('resetPasswordBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            window.location.href = '/otp_enter';
+
+            fetch('http://localhost:5500/send_otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+</body>
 </html>
